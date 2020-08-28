@@ -82,3 +82,25 @@ function handleTeamFormSubmit(event) {
         })
     teamsForm.reset()
 }
+
+// 5) Add teams to DOM 
+
+function addTeamsToDOM(response) {
+    response.forEach(team => addTeamToDOM(team))
+}
+
+function addTeamToDOM(team) {
+    const teamsContainer = document.querySelector('.teams-container')
+    teamsContainer.innerHTML +=
+        `<div data-id='${team.id}' class="card">
+            <h3>${team.name}</h3>
+            <ol>
+                <li>${team.players}</li>
+                <li>${team.players}</li>
+                <li>${team.players}</li>
+                <li>${team.players}</li>
+                <li>${team.players}</li>
+            </ol>
+            <img src="${team.logo}" alt="${team.name}>
+        </div>`
+}
