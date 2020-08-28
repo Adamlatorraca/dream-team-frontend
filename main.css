@@ -19,10 +19,14 @@ nav {
 }
 
 .teams-container {
-    display: grid;
+    display: inline-block;
 }
 
-#team-1 > img {
+img {
     width: 200px;
     height: 200px;
+}
+
+.delete {
+    float: inline-start;
 }
