@@ -1,0 +1,23 @@
+body {
+    background-color: gray;
+}
+
+header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 0 25px 0;
+}
+
+#team-form {
+    text-align: center;
+    display: none;
+}
+
+.teams-container {
+    display: grid;
+}
