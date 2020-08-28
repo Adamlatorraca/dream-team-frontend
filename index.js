@@ -55,3 +55,30 @@ function handleAddTeamButton(e) {
     }
 })
 }
+
+// 4) handle new team submit
+function handleTeamFormSubmit(event) {
+    event.preventDefault()
+    let name = document.querySelector('h3')
+    let logo = document.querySelector('img')
+
+
+    let newTeamObj = {
+        name: name.value,
+        logo: logo.value
+    }
+    let configObj = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({team: newTeamObj})
+    }
+    fetch('http://localhost:3000/teams', configObj)
+        .then(response => response.json())
+        .then(json => {
+            addTeamToDom(json.data)
+        })
+    teamsForm.reset()
+}
