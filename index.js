@@ -5,9 +5,12 @@ let newTeam = false
 
 // 1) On Load
 document.addEventListener('DOMContentLoaded', () => {
+    addTeamFormToDOM();
     const addTeamButton = document.getElementById('add-team-button');
     addTeamButton.addEventListener('click', handleAddTeamButton)
     fetchTeams();
+    const submitButton = document.getElementById('submit')
+    submitButton.addEventListener('submit', handleTeamFormSubmit)
 })
 
 // 1) fetch teams
