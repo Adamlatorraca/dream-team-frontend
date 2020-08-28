@@ -97,6 +97,8 @@ function addTeamToDOM(team) {
     teamsContainer.innerHTML +=
         `<div id='team-${team.id}' class="card">
             <h3>${team.name}</h3>
+            <img src="${team.logo}" alt="${team.name}">
+            <h4>Players:</h4>
             <ol>
                 <li>${team.players}</li>
                 <li>${team.players}</li>
@@ -104,7 +106,7 @@ function addTeamToDOM(team) {
                 <li>${team.players}</li>
                 <li>${team.players}</li>
             </ol>
-            <img src="${team.logo}" alt="${team.name}">
+            <br>
             <button class="delete" id="${team.id}">Delete Team</button>
         </div>`
 }
