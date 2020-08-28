@@ -95,7 +95,7 @@ function addTeamsToDOM(response) {
 function addTeamToDOM(team) {
     const teamsContainer = document.querySelector('.teams-container')
     teamsContainer.innerHTML +=
-        `<div data-id='${team.id}' class="card">
+        `<div id='team-${team.id}' class="card">
             <h3>${team.name}</h3>
             <ol>
                 <li>${team.players}</li>
@@ -104,6 +104,34 @@ function addTeamToDOM(team) {
                 <li>${team.players}</li>
                 <li>${team.players}</li>
             </ol>
-            <img src="${team.logo}" alt="${team.name}>
+            <img src="${team.logo}" alt="${team.name}">
+            <button class="delete" id="${team.id}">Delete Team</button>
         </div>`
 }
+
+// 6) Add delete button
+
+function deleteTeam(id) {
+    let configObj = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    }
+
+    fetch(`http://localhost:3000/teams/${id}`, configObj)
+    .then(res => res.json())
+    .then(json => {
+        alert(json.message)
+    })
+
+    let team = document.getElementById(`team-${id}`)
+    team.remove()
+}
+
+// 7) handle delete button
+
+// 8) Add edit button
+
+// 9) handle edit button
