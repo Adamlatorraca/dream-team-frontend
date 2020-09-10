@@ -12,11 +12,10 @@ class CategoriesAdapter{
                 this.sanitizeAndInitializeCategory(el)
             })
         })
-
     }
 
     sanitizeAndInitializeCategory(resp){
-        let cat = new Category({id: resp.id, ...resp.attributes})
+        let cat = new Category({id: resp.id, name: resp.attributes.name})
         cat.attachToDom()
     }
 }
