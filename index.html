@@ -8,25 +8,42 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <script src="index.js"></script>
 
         <header id="main-header">
             <h1>Make Your CS:GO Dream Team!</h1>
-            <h2><input type="button" id="add-team-button" value="Add New Team"></h2>
+            
         </header>
 
         <main>
-            <div id="add-team-div">
-                <form method="post" id="team-form"></form>
-            </div>
+            <h2>Add a New Team!</h2>
+            <form id="team-form">
+                <label for="team-name">Team Name:</label>
+                <input type="text" id="team-name" name="name" value="" placeholder="Liquid, Astralis, NaVi, etc." class="input-team-name">
+                <br>
+                <label for="team-logo">Team Logo:</label>
+                <input type="text" id="team-logo" name="logo" value="" placeholder="imgur.com/linkyourlogo" class="input-team-logo">
+                <br>
+                <br>
+                <input id="submit" type="submit" name="submit" value="Submit">
+            </form>
+            <br>
+            <h3>Your Teams:</h3>
+            <div id="team-list"></div>
 
-
-            <div class="teams-container"></div>
+            <h4>Here are all the Categories:</h4>
+            <ul id="category-list">
+            </ul>
         </main>
 
         <footer>
 
 
         </footer>
+        
+        <script src="src/category.js" type="text/javascript"></script>
+        <script src="src/categoriesAdapter.js" type="text/javascript"></script>
+        <script src="src/teamsAdapter.js" type="text/javascript"></script>
+        <script src="src/team.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
     </body>
 </html>
