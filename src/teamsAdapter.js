@@ -50,10 +50,12 @@ class TeamsAdapter {
 
         const name = document.getElementById('team-name').value
         const logo = document.getElementById('team-logo').value
+        const category = document.getElementById('team-category').value
 
         let newTeamObj = {
             name,
-            logo
+            logo,
+            category
         }
 
         let configObj = {
@@ -65,12 +67,17 @@ class TeamsAdapter {
             body: JSON.stringify(newTeamObj)
         }
 
-        //pessimistic rendering (we don't attach to DOM until we get a response back)
         fetch('http://localhost:3000/teams', configObj)
             .then(res => res.json())
             .then(json => {
                 let team = new Team(json.data.attributes)
-                team.attachToDom()
+                let category = new Category(team.category)
+                if (document.getElementById(`category-${category.id}`)) {
+                    team.attachToDom()
+                } else {
+                    team.attachToDom()
+                    category.attachToDom()
+                }
             })
         teamForm.reset()
         //const newForm = document.getElementById('new-form-container')
