@@ -61,7 +61,7 @@ class Team {
         this.element.innerHTML =
         `<h3>${this.name}</h3>
         <img src="${this.logo}" alt="${this.name}">
-
+        <p></p>
         <br>
         <button class="update" id="${this.id}">Update Team</button>
         <button class="delete" id="${this.id}">Delete Team</button>`
@@ -87,6 +87,6 @@ class Team {
         let formDiv = document.createElement('div')
         formDiv.id = `update-form-${teamId}`
         formDiv.innerHTML = updateForm
-        team.element.querySelector('li').append(formDiv)
+        team.element.querySelector('p').append(formDiv)
     }
 }
