@@ -30,10 +30,13 @@
                 <input id="submit" type="submit" name="submit" value="Submit">
             </form>
             <br>
-            <h3>Your Teams:</h3>
+
+            <input type="search" id="team-search" name="q" placeholder="Search" onkeyup="teamSearch()">
+            <h2>Your Teams:</h2>
             <div id="team-list"></div>
 
             <h4>Here are all the Categories:</h4>
+            <input type="button" id="all-teams" name="all-teams" value="All Teams" onClick="document.location.reload(true)">
             <ul id="category-list">
             </ul>
         </main>

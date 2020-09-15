@@ -13,7 +13,7 @@ class Category{
 
     fullRender(){
         this.element.innerHTML = `
-            <h3>${this.name}</h3>
+            <h4>${this.name}</h4>
         `
         return this.element
     }
@@ -36,6 +36,11 @@ class Category{
         this.teams().forEach((i)=>{
             i.attachToDom()
         })
+    }
+
+    displayAllTeams = () => {
+        let allCategoriesButton = document.getElementById('all-teams')
+        allCategoriesButton.addEventListener('click', teams(Team.all))
     }
 
 }
